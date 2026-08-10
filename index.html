@@ -21,7 +21,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
+<!-- The ?v= number busts the browser cache. GitHub Pages serves assets with
+     cache-control: max-age=600, so without it a visitor who has already loaded
+     the site keeps their old stylesheet. Bump the number on every CSS change. -->
+<link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
@@ -328,6 +331,6 @@
   <p class="foot-legal">&copy; <span id="year">2026</span> Lighthouse Montessori Academy.</p>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>
