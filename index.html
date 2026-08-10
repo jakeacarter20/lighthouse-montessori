@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lighthouse Montessori Academy | Provo, Utah</title>
+<meta name="description" content="An independent Montessori school in Provo, Utah serving ages 0 to 18 in a Spanish and English language immersion environment.">
+
+<meta property="og:title" content="Lighthouse Montessori Academy">
+<meta property="og:description" content="An independent Montessori school in Provo, Utah serving ages 0 to 18 in a Spanish and English language immersion environment.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero-reading.jpg">
+
+<link rel="icon" href="img/logo.png">
+
+<!-- Fonts are loaded from Google Fonts so this stays a zero-build static site.
+     To self-host later: download the woff2 files, drop them in /fonts, and swap
+     this link for @font-face rules in style.css. Nothing else needs to change. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav-wrap" id="top">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">
+      <img src="img/logo.png" alt="" width="572" height="690" aria-hidden="true">
+      <span class="brand-text">Lighthouse<br>Montessori Academy</span>
+    </a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-links">
+      <span class="burger-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#programs">Programs</a>
+      <a href="#outcomes">Philosophy</a>
+      <a href="#community">Community</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Register</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-copy reveal">
+      <h1>Joy, connection,<br>and truth.</h1>
+      <p class="lead">An independent Montessori school in Provo, serving ages 0 to 18 in a Spanish and English immersion environment.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#contact">Register</a>
+        <a class="btn btn-ghost" href="#contact">Contact us</a>
+      </div>
+    </div>
+
+    <div class="hero-media reveal reveal-delay">
+      <img src="img/hero-reading.jpg"
+           alt="A young child curled up with a picture book, reading aloud"
+           width="1920" height="1080" fetchpriority="high" decoding="async">
+    </div>
+  </section>
+
+  <!-- ============ PROGRAMS ============ -->
+  <!-- Lokal's colour-blocked product grid, mapped onto the school's four programs.
+       Ages confirmed from the homepage body copy (NIDO 0-3, CASA 3-6).
+       TODO: the one-line descriptions below are drafted from the site's stated
+       language plan (Spanish ages 0-6, English ages 7-18). Confirm with the school. -->
+  <section class="section" id="programs">
+    <div class="section-head">
+      <h2>Four programs, one continuous path</h2>
+      <p>A child can begin at four months old and graduate from the same community eighteen years later.</p>
+    </div>
+
+    <ul class="programs">
+      <li class="prog prog-nido reveal">
+        <span class="prog-age">0 to 3</span>
+        <h3>Nido</h3>
+        <p>The nest. First steps, first words, and Spanish from the very beginning.</p>
+      </li>
+      <li class="prog prog-casa reveal">
+        <span class="prog-age">3 to 6</span>
+        <h3>Casa</h3>
+        <p>Practical life, sensorial discovery, and phonics in both Spanish and English.</p>
+      </li>
+      <li class="prog prog-action reveal">
+        <span class="prog-age">7 to 11</span>
+        <h3>Action</h3>
+        <p>Studies move into English while Spanish continues alongside.</p>
+      </li>
+      <li class="prog prog-hilltop reveal">
+        <span class="prog-age">12 to 18</span>
+        <h3>Hilltop</h3>
+        <p>Adolescent work, real responsibility, and the road to graduation.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ OUTCOMES ============ -->
+  <section class="section section-tint" id="outcomes">
+   <div class="section-inner">
+    <div class="section-head">
+      <h2>We help children become more</h2>
+    </div>
+
+    <ul class="outcomes">
+      <li class="oc oc-wide reveal">
+        <figure>
+          <img src="img/practical-life.jpg" alt="Two children holding up hand sewn fabric hearts they made" width="960" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="oc-body">
+          <h3>Confident</h3>
+          <p>Practical life activities develop organization, focus, and confidence.</p>
+        </div>
+      </li>
+
+      <li class="oc reveal">
+        <figure>
+          <img src="img/creative.jpg" alt="A child grinning behind a watercolour painting they just finished" width="960" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="oc-body">
+          <h3>Creative</h3>
+          <p>Sensorial work engages every sense through open exploration.</p>
+        </div>
+      </li>
+
+      <li class="oc reveal">
+        <figure>
+          <img src="img/mathematics.jpg" alt="A child giving a thumbs up beside a stack of Montessori golden bead cubes" width="960" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="oc-body">
+          <h3>Problem solvers</h3>
+          <p>Mathematics arrives as challenges, games, and materials children enjoy.</p>
+        </div>
+      </li>
+
+      <li class="oc reveal">
+        <figure>
+          <img src="img/language.jpg" alt="A child at a writing table with a notebook and word cards" width="960" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="oc-body">
+          <h3>Bilingual</h3>
+          <p>Phonics in both languages. Spanish from ages 0 to 6, English from 7 to 18.</p>
+        </div>
+      </li>
+
+      <li class="oc reveal">
+        <figure>
+          <img src="img/peace-education.jpg" alt="Two children working together over a number board and workbook" width="960" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="oc-body">
+          <h3>Emotionally intelligent</h3>
+          <p>Peace education builds conflict resolution and resilience.</p>
+        </div>
+      </li>
+
+      <li class="oc oc-wide reveal">
+        <figure>
+          <img src="img/culture.jpg" alt="A child assembling a Montessori continent map puzzle" width="960" height="960" loading="lazy" decoding="async">
+        </figure>
+        <div class="oc-body">
+          <h3>Life-long learners</h3>
+          <p>Geography, history, zoology, botany, dance, music, and art.</p>
+        </div>
+      </li>
+    </ul>
+   </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <!-- Single full-bleed brand colour block. The page theme stays light throughout;
+       this is a deliberate colour-block moment, used once. -->
+  <section class="statement">
+    <blockquote class="reveal">
+      <p>We nurture life skills and independent learning in a language immersion environment of joy, connection, and truth.</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ COMMUNITY ============ -->
+  <section class="section" id="community">
+    <div class="section-head">
+      <h2>School is a place families come to</h2>
+    </div>
+
+    <div class="community">
+      <article class="com com-a reveal">
+        <img src="img/field-trips.jpg" alt="Children meeting a ballet dancer in costume during a theatre visit" width="960" height="960" loading="lazy" decoding="async">
+        <div class="com-body">
+          <h3>Field trips and nature walks</h3>
+          <p>Children visit museums, theaters, and parks. The field trip calendar goes out in advance, so parents who can join us are welcome to come along.</p>
+        </div>
+      </article>
+
+      <article class="com com-b reveal">
+        <img src="img/celebrations.jpg" alt="Rows of bright triangular bunting flags against a clear blue sky" width="1131" height="1131" loading="lazy" decoding="async">
+        <div class="com-body">
+          <h3>Celebrations</h3>
+          <p>We cut up our own vegetables for a Thanksgiving feast, make Christmas cookies, plant seeds in spring, and celebrate graduation. Unit studies usually end with a celebration, and birthday parties are open to friends.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-tint" id="contact">
+   <div class="section-inner">
+    <div class="contact">
+
+      <div class="contact-intro reveal">
+        <h2>Come and see the school</h2>
+        <p>Tell us a little about your family and we will get back to you.</p>
+
+        <dl class="contact-details">
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+13852375437">(385) 237-5437</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Hello@LighthouseMontessoriAcademy.com">Hello@LighthouseMontessoriAcademy.com</a></dd>
+          </div>
+          <div>
+            <dt>Address</dt>
+            <dd>
+              <a href="https://maps.google.com/?q=997+E+Briar+Ave,+Provo+UT+84604" target="_blank" rel="noopener">
+                997 E Briar Ave<br>Provo, UT 84604
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Static markup only. There is no backend wired up: on submit the form
+           validates in the browser and shows the success panel. To make it live,
+           point action= at Formspree / Netlify Forms / your own handler and
+           delete the preventDefault() branch in js/main.js. -->
+      <form class="form reveal" id="enquiry" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required>
+          <p class="error" id="e-name" hidden>Please tell us your name.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required>
+          <p class="error" id="e-email" hidden>Please enter an email we can reply to.</p>
+        </div>
+
+        <div class="field">
+          <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label for="f-program">Program of interest</label>
+          <select id="f-program" name="program">
+            <option value="">No preference yet</option>
+            <option>Nido, 0 to 3</option>
+            <option>Casa, 3 to 6</option>
+            <option>Action, 7 to 11</option>
+            <option>Hilltop, 12 to 18</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="4" required aria-describedby="h-message"></textarea>
+          <p class="hint" id="h-message">Your child's age and when you would like to start are helpful.</p>
+          <p class="error" id="e-message" hidden>Please add a short message.</p>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit" id="submit-btn">Send enquiry</button>
+
+        <p class="form-done" id="form-done" hidden role="status">
+          Thank you. Your enquiry has not been sent yet because this form is not
+          connected to a mail service. Please call or email us in the meantime.
+        </p>
+      </form>
+
+    </div>
+   </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="foot-brand">
+      <img src="img/logo.png" alt="" width="572" height="690" aria-hidden="true">
+      <p>Lighthouse Montessori Academy<br>An independent private school in Provo, Utah.</p>
+    </div>
+
+    <nav class="foot-col" aria-label="Programs">
+      <h2>Programs</h2>
+      <a href="#programs">Nido, 0 to 3</a>
+      <a href="#programs">Casa, 3 to 6</a>
+      <a href="#programs">Action, 7 to 11</a>
+      <a href="#programs">Hilltop, 12 to 18</a>
+    </nav>
+
+    <nav class="foot-col" aria-label="School information">
+      <h2>School</h2>
+      <a href="#outcomes">Philosophy</a>
+      <a href="#community">Community</a>
+      <a href="#contact">Admissions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="foot-col">
+      <h2>Visit</h2>
+      <a href="https://maps.google.com/?q=997+E+Briar+Ave,+Provo+UT+84604" target="_blank" rel="noopener">997 E Briar Ave<br>Provo, UT 84604</a>
+      <a href="tel:+13852375437">(385) 237-5437</a>
+      <a href="mailto:Hello@LighthouseMontessoriAcademy.com">Email us</a>
+    </div>
+  </div>
+
+  <p class="foot-legal">&copy; <span id="year">2026</span> Lighthouse Montessori Academy.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
