@@ -254,7 +254,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;              /* a wide gradient must never cause sideways scroll */
   /* Top padding clears the floating nav and no more. A taller pad drops the
      headline into the middle of the viewport and reads as a layout bug. */
-  padding: clamp(6.5rem, 9vw, 7rem) var(--pad) clamp(3.5rem, 7vw, 5.5rem);
+  /* The bottom pad is deliberately small. The section below brings its own
+     generous top padding, and the wash already fades out on its own, so a full
+     pad here just doubles up and leaves the buttons stranded. */
+  padding: clamp(6.5rem, 9vw, 7rem) var(--pad) clamp(1rem, 2.5vw, 2rem);
 }
 /* Warm wash in the logo's own gold, with a trace of the red underneath it.
    Both stops reach transparent well before the bottom, so the hero dissolves
