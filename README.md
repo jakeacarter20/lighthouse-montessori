@@ -58,6 +58,11 @@ download the woff2 files into `/fonts`, replace the `<link>` in the head with
   Montessori subject areas" link to absolute URLs on
   lighthousemontessoriacademy.com. When this replaces the real homepage, change
   them to relative paths so they stay inside the site.
+- **Update the social card host.** `og:url` and `og:image` in the head are
+  absolute URLs on the GitHub Pages domain, because social platforms will not
+  resolve a relative path. Point them at the real domain when this moves.
+- **`hero-reading.jpg` is no longer used.** It was the old hero photograph.
+  It is still in `img/` in case it is wanted elsewhere; delete it if not.
 - **Confirm the age ranges.** The existing site states two different sets. This
   build uses the homepage body copy: Nido 0 to 3, Casa 3 to 6, Action 7 to 11,
   Hilltop 12 to 18. That still leaves an apparent gap between Casa ending at 6
