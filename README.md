@@ -54,6 +54,10 @@ download the woff2 files into `/fonts`, replace the `<link>` in the head with
   Casa, Action, and Hilltop are drafted from the school's stated language plan
   (Spanish ages 0 to 6, English ages 7 to 18). The current homepage carries no
   per-programme copy. These are marked with a `TODO` comment in `index.html`.
+- **Subject area links point at the live site.** The six cards under "Authentic
+  Montessori subject areas" link to absolute URLs on
+  lighthousemontessoriacademy.com. When this replaces the real homepage, change
+  them to relative paths so they stay inside the site.
 - **Confirm the age ranges.** The existing site states two different sets. This
   build uses the homepage body copy: Nido 0 to 3, Casa 3 to 6, Action 7 to 11,
   Hilltop 12 to 18. That still leaves an apparent gap between Casa ending at 6

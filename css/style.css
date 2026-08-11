@@ -344,15 +344,43 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .oc {
+  position: relative;                /* anchor for the stretched link below */
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--r);
   overflow: hidden;
+  transition: border-color .3s var(--ease), transform .3s var(--ease);
 }
-.oc figure { margin: 0; }
-.oc img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.oc figure { margin: 0; overflow: hidden; }
+.oc img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  transition: transform .5s var(--ease);
+}
 .oc-body { padding: clamp(1.15rem, 2vw, 1.6rem); }
 .oc-body h3 { font-size: 1.375rem; }
+
+/* Each card links to its subject page. The title carries the real anchor and a
+   stretched pseudo-element makes the whole card clickable, so there is still
+   just one tab stop and one readable link text per card. */
+.oc-body h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.oc-body h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.oc:hover { border-color: var(--red-deep); }
+.oc:hover img { transform: scale(1.04); }
+.oc:has(a:focus-visible) { outline: 3px solid var(--red-deep); outline-offset: 3px; }
+.oc-body h3 a:focus-visible { outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .oc, .oc img { transition: none; }
+  .oc:hover img { transform: none; }
+}
 .oc-body p {
   margin-top: .5rem;
   color: var(--ink-2);
