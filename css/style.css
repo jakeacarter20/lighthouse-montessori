@@ -241,36 +241,38 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ---------- hero ---------- */
-.hero {
-  max-width: var(--wrap);
-  margin-inline: auto;
-  /* Top padding clears the floating nav and no more. A taller pad drops the
-     headline into the middle of the viewport and reads as a layout bug. */
-  padding: clamp(6.5rem, 9vw, 7rem) var(--pad) clamp(3rem, 6vw, 4.5rem);
-}
-
 /* Emblem hero. The mark carries the top of the page instead of photography:
    the classroom photos are phone snapshots and soften badly at this size.
-   Type is capped a step below the old split hero so the whole block still
-   lands inside one screen with the buttons visible. */
-.hero-emblem {
+
+   The wash runs the full width of the viewport rather than sitting in a card.
+   The nav is fixed and so takes no layout space, which lets the gold reach the
+   very top edge and sit behind the translucent nav pill. Content inside stays
+   on the normal measure. */
+.hero {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
-  text-align: center;
-  background: var(--paper-2);
-  border-radius: var(--r);
-  padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
+  overflow: hidden;              /* a wide gradient must never cause sideways scroll */
+  /* Top padding clears the floating nav and no more. A taller pad drops the
+     headline into the middle of the viewport and reads as a layout bug. */
+  padding: clamp(6.5rem, 9vw, 7rem) var(--pad) clamp(3.5rem, 7vw, 5.5rem);
 }
-/* Warm wash in the logo's own gold, with a trace of the red underneath it. */
-.hero-emblem::before {
+/* Warm wash in the logo's own gold, with a trace of the red underneath it.
+   Both stops reach transparent well before the bottom, so the hero dissolves
+   into the page instead of ending on a hard band edge. */
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(232, 186, 55, .38) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 50% 8%, rgba(238, 58, 37, .14) 0%, transparent 70%);
+    radial-gradient(ellipse 78% 68% at 50% -4%, rgba(232, 186, 55, .44) 0%, transparent 72%),
+    radial-gradient(ellipse 52% 44% at 50% 2%, rgba(238, 58, 37, .15) 0%, transparent 72%);
+}
+
+.hero-emblem {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  text-align: center;
 }
 .hero-emblem img {
   width: clamp(84px, 12vw, 126px);
