@@ -155,6 +155,66 @@
 .hD h1 { max-width: 16ch; margin-inline: auto; }
 .hD .lead { margin-inline: auto; }
 .hD .btn-row { justify-content: center; }
+
+/* ==========================================================================
+   C + D hybrids. Editorial type scale and the programme row from C, the mark
+   and the warm gold wash from D. All three use the lamp crop of the logo,
+   which is the part of the file that is not cut off at the bottom.
+   ========================================================================== */
+
+/* Full bleed wash, with the content held to the normal measure inside it. */
+.bleed { position: relative; isolation: isolate; overflow: hidden; }
+.bleed > .inner {
+  max-width: var(--wrap); margin-inline: auto;
+  padding: clamp(3rem, 6vw, 4.5rem) var(--pad) clamp(3rem, 6vw, 4rem);
+}
+.wash-top::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 62% 52% at 50% -6%, rgba(232,186,55,.42) 0%, transparent 68%),
+    radial-gradient(ellipse 42% 34% at 50% 0%, rgba(238,58,37,.13) 0%, transparent 70%);
+}
+.wash-corner::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 54% 62% at 88% -8%, rgba(232,186,55,.46) 0%, transparent 66%),
+    radial-gradient(ellipse 36% 40% at 92% 0%, rgba(238,58,37,.14) 0%, transparent 70%);
+}
+
+/* Shared editorial bits, borrowed from C. */
+.ed h1 { font-size: clamp(2.6rem, 8vw, 5.75rem); line-height: .96; letter-spacing: -.042em; }
+.ed h1 em { font-style: normal; color: var(--red-deep); }
+.ed .lead { margin-top: 1.6rem; max-width: 44ch; color: var(--ink-2);
+            font-size: clamp(1.0625rem, 1rem + .45vw, 1.3125rem); line-height: 1.55; }
+.ed .rule { margin-top: clamp(2.25rem, 4vw, 3rem); border-top: 2px solid var(--gold); padding-top: 1.25rem; }
+.ed .ages { display: flex; flex-wrap: wrap; gap: 1.25rem 2.5rem;
+            font-family: var(--font-display); font-weight: 600; color: var(--ink);
+            font-size: clamp(.95rem, 1.6vw, 1.1rem); }
+.ed .ages b { display: block; color: var(--ink-2); font-weight: 400; font-size: .85em; }
+
+/* --- E. Centred, mark above the headline --- */
+.hE { text-align: center; }
+.hE img { width: clamp(120px, 17vw, 188px); height: auto; display: block; margin: 0 auto 2rem; }
+.hE h1 { max-width: 17ch; margin-inline: auto; }
+.hE .lead { margin-inline: auto; }
+.hE .btn-row { justify-content: center; }
+.hE .ages { justify-content: center; }
+
+/* --- F. Left lockup, wash pulled to the top right --- */
+.hF img { width: clamp(78px, 10vw, 116px); height: auto; display: block; margin-bottom: 1.5rem; }
+
+/* --- G. Mark as a large watermark bleeding off the right --- */
+.hG { position: relative; }
+.hG .wm {
+  position: absolute; z-index: -1; pointer-events: none;
+  right: -8%; top: 50%; transform: translateY(-50%);
+  width: min(58%, 620px); height: auto; opacity: .17;
+}
+.hG h1, .hG .lead, .hG .btn-row, .hG .rule { position: relative; }
+.hG h1 { max-width: 13ch; }
+@media (max-width: 780px) {
+  .hG .wm { right: -22%; opacity: .11; width: 82%; }
+}
 </style>
 </head>
 <body>
@@ -165,6 +225,9 @@
   <a href="#b">B. Colour blocks</a>
   <a href="#c">C. Editorial</a>
   <a href="#d">D. Emblem</a>
+  <a href="#e">E. C+D centred</a>
+  <a href="#f">F. C+D lockup</a>
+  <a href="#g">G. C+D watermark</a>
   <a href="index.html">Back to the page</a>
 </div>
 
@@ -245,6 +308,85 @@
     <div class="btn-row">
       <a class="btn btn-primary" href="#d">Register</a>
       <a class="btn btn-ghost" href="#d">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<div class="opt-rule"><hr></div>
+
+<!-- ============================== E ============================== -->
+<div class="opt-label" id="e">
+  <h2>C + D centred <span>hybrid</span></h2>
+  <p>D's centred poster with C's type scale and programme row. The mark is the lamp on its own, which is the part of the logo that is not cut off, and the gold wash runs the full width instead of sitting in a box.</p>
+</div>
+<section class="bleed wash-top">
+  <div class="inner ed hE">
+    <img src="img/logo-lamp.png" alt="" width="572" height="186">
+    <h1>Joy, connection, and <em>truth</em>.</h1>
+    <p class="lead">An independent Montessori school in Provo, serving ages 0 to 18 in a Spanish and English immersion environment.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#e">Register</a>
+      <a class="btn btn-ghost" href="#e">Contact us</a>
+    </div>
+    <div class="rule">
+      <div class="ages">
+        <span>Nido <b>0 to 3</b></span>
+        <span>Casa <b>3 to 6</b></span>
+        <span>Action <b>7 to 11</b></span>
+        <span>Hilltop <b>12 to 18</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="opt-rule"><hr></div>
+
+<!-- ============================== F ============================== -->
+<div class="opt-label" id="f">
+  <h2>C + D lockup <span>hybrid</span></h2>
+  <p>C's left aligned editorial composition kept intact, with the mark sitting above the headline as a lockup and the wash pulled off to the top right so the page stays asymmetric.</p>
+</div>
+<section class="bleed wash-corner">
+  <div class="inner ed hF">
+    <img src="img/logo-lamp.png" alt="" width="572" height="186">
+    <h1>Joy, connection, and <em>truth</em>.</h1>
+    <p class="lead">An independent Montessori school in Provo, serving ages 0 to 18 in a Spanish and English immersion environment.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#f">Register</a>
+      <a class="btn btn-ghost" href="#f">Contact us</a>
+    </div>
+    <div class="rule">
+      <div class="ages">
+        <span>Nido <b>0 to 3</b></span>
+        <span>Casa <b>3 to 6</b></span>
+        <span>Action <b>7 to 11</b></span>
+        <span>Hilltop <b>12 to 18</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="opt-rule"><hr></div>
+
+<!-- ============================== G ============================== -->
+<div class="opt-label" id="g">
+  <h2>C + D watermark <span>hybrid</span></h2>
+  <p>Type stays dominant as in C, and the mark comes in large and quiet behind it, bleeding off the right edge. The logo sets the mood without competing with the headline.</p>
+</div>
+<section class="bleed wash-top">
+  <div class="inner ed hG">
+    <img class="wm" src="img/logo-lamp.png" alt="" width="572" height="186">
+    <h1>Joy, connection, and <em>truth</em>.</h1>
+    <p class="lead">An independent Montessori school in Provo, serving ages 0 to 18 in a Spanish and English immersion environment.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#g">Register</a>
+      <a class="btn btn-ghost" href="#g">Contact us</a>
+    </div>
+    <div class="rule">
+      <div class="ages">
+        <span>Nido <b>0 to 3</b></span>
+        <span>Casa <b>3 to 6</b></span>
+        <span>Action <b>7 to 11</b></span>
+        <span>Hilltop <b>12 to 18</b></span>
+      </div>
     </div>
   </div>
 </section>
