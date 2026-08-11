@@ -247,40 +247,52 @@ ul { margin: 0; padding: 0; list-style: none; }
   /* Top padding clears the floating nav and no more. A taller pad drops the
      headline into the middle of the viewport and reads as a layout bug. */
   padding: clamp(6.5rem, 9vw, 7rem) var(--pad) clamp(3rem, 6vw, 4.5rem);
-  display: grid;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
-}
-@media (min-width: 900px) {
-  .hero { grid-template-columns: 1.05fr .95fr; }
 }
 
-.hero-copy h1 {
-  font-size: clamp(2.75rem, 6.4vw, 4.75rem);
-  letter-spacing: -.035em;
+/* Emblem hero. The mark carries the top of the page instead of photography:
+   the classroom photos are phone snapshots and soften badly at this size.
+   Type is capped a step below the old split hero so the whole block still
+   lands inside one screen with the buttons visible. */
+.hero-emblem {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  background: var(--paper-2);
+  border-radius: var(--r);
+  padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
 }
-.hero-copy .lead {
-  margin-top: 1.4rem;
-  max-width: 40ch;
+/* Warm wash in the logo's own gold, with a trace of the red underneath it. */
+.hero-emblem::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgba(232, 186, 55, .38) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 8%, rgba(238, 58, 37, .14) 0%, transparent 70%);
+}
+.hero-emblem img {
+  width: clamp(84px, 12vw, 126px);
+  height: auto;
+  display: block;
+  margin: 0 auto clamp(1.25rem, 2.5vw, 1.75rem);
+}
+.hero-emblem h1 {
+  font-size: clamp(2.375rem, 5.6vw, 4.25rem);
+  letter-spacing: -.035em;
+  max-width: 16ch;
+  margin-inline: auto;
+}
+.hero-emblem .lead {
+  margin: 1.25rem auto 0;
+  max-width: 42ch;
   font-size: clamp(1.0625rem, 1rem + .45vw, 1.3125rem);
   line-height: 1.55;
   color: var(--ink-2);
 }
 .btn-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
-
-/* Height is capped rather than driven by aspect ratio, so the image can never
-   grow tall enough to push the hero past a single screen. */
-.hero-media {
-  position: relative;
-  height: clamp(260px, 46vw, 380px);
-  border-radius: var(--r);
-  overflow: hidden;
-  background: var(--paper-2);
-}
-.hero-media img { width: 100%; height: 100%; object-fit: cover; }
-@media (min-width: 900px) {
-  .hero-media { height: clamp(400px, 56vh, 545px); }
-}
+.hero-emblem .btn-row { justify-content: center; }
 
 /* ---------- programs: asymmetric colour blocks ---------- */
 .programs {
@@ -542,7 +554,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
 .reveal.in { opacity: 1; transform: none; }
-.reveal-delay { transition-delay: .12s; }
 .programs .reveal.in:nth-child(2) { transition-delay: .08s; }
 .programs .reveal.in:nth-child(3) { transition-delay: .16s; }
 .programs .reveal.in:nth-child(4) { transition-delay: .24s; }
