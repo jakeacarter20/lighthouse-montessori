@@ -196,7 +196,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .burger[aria-expanded="true"] i:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 860px) {
+/* Hamburger below 900px. Five links plus the Register pill clear a single line
+   down to about 862px, but only by ~23px, which a font fallback swap can eat.
+   Raise this if the nav ever gains a seventh item. */
+@media (max-width: 899px) {
   .burger { display: inline-flex; }
   .nav { flex-wrap: wrap; border-radius: 26px; }
   .nav-links {
@@ -232,7 +235,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* Width is set in rem, not ch: a ch cap here would resolve against this
    element's body font and throttle the much larger display heading inside. */
 .section-head { max-width: min(100%, 44rem); margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.section-head h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); }
+/* Every section heading shares one size. Keep new sections on this list rather
+   than restating the clamp, which is how the About heading first shipped at the
+   browser default instead of display size. */
+.section-head h2,
+.about-copy h2,
+.contact-intro h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); }
 .section-head p {
   margin-top: 1rem;
   color: var(--ink-2);
@@ -409,6 +417,51 @@ ul { margin: 0; padding: 0; list-style: none; }
    makes the emphasis read at this size instead of muddying into the body grey. */
 .oc-body p strong { color: var(--ink); font-weight: 600; }
 
+/* ---------- about: running copy with a pulled quote ----------
+   The right column carries a real pullquote rather than a spare paragraph, so
+   this reads as a composition and not as a heading with filler beside it. */
+.about { display: grid; gap: clamp(2rem, 4vw, 3.5rem); }
+@media (min-width: 900px) {
+  .about { grid-template-columns: 1.15fr .85fr; align-items: start; }
+}
+
+.about-copy h2 { max-width: 18ch; }
+.about-lead {
+  margin-top: 1.25rem;
+  max-width: 46ch;
+  font-size: clamp(1.125rem, 1rem + .5vw, 1.375rem);
+  line-height: 1.5;
+}
+.about-copy p:not(.about-lead) {
+  margin-top: 1rem;
+  max-width: 58ch;
+  color: var(--ink-2);
+  line-height: 1.65;
+}
+.about-copy .btn-row { margin-top: 2rem; }
+
+.about-quote {
+  margin: 0;
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 3px solid var(--gold);
+}
+.about-quote blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  line-height: 1.18;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.about-quote blockquote::before { content: "\201C"; }
+.about-quote blockquote::after  { content: "\201D"; }
+.about-quote figcaption {
+  margin-top: 1rem;
+  color: var(--ink-2);
+  font-size: .9375rem;
+}
+
 /* ---------- statement: one colour block, used once ---------- */
 .statement {
   background: var(--block);
@@ -454,7 +507,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (min-width: 900px) {
   .contact { grid-template-columns: 1fr 1fr; align-items: start; }
 }
-.contact-intro h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); }
 .contact-intro > p { margin-top: 1rem; color: var(--ink-2); max-width: 40ch; }
 
 .contact-details { margin: clamp(2rem, 4vw, 3rem) 0 0; display: grid; gap: 1.5rem; }
