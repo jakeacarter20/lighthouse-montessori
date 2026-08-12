@@ -420,7 +420,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- how school works: fact strip under the hero ----------
    Deliberately small and quiet. It carries a decisive fact, so it needs to be
    read early, but it must not compete with the hero above it. */
-.attend { padding-top: 0; padding-bottom: clamp(1rem, 3vw, 2rem); }
+/* The strip sits centred between the hero and the programmes section. The gap
+   below it is supplied entirely by that section's own top padding, so the top
+   padding here is sized to match it once the hero's small bottom pad is added:
+   hero pad + this = the section pad below. Keep the two in step if either the
+   hero or the .section padding changes. */
+.attend { padding-top: clamp(3rem, 6.5vw, 5.5rem); padding-bottom: 0; }
 .attend-list {
   list-style: none;
   margin: 0;
