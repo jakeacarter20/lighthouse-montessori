@@ -50,10 +50,9 @@ download the woff2 files into `/fonts`, replace the `<link>` in the head with
   panel saying the enquiry was not sent. Point `action` at Formspree, Netlify
   Forms, or your own handler, then delete the `preventDefault()` branch at the
   end of the submit handler in `js/main.js`.
-- **Confirm the programme descriptions.** The one-line summaries under Nido,
-  Casa, Action, and Hilltop are drafted from the school's stated language plan
-  (Spanish ages 0 to 6, English ages 7 to 18). The current homepage carries no
-  per-programme copy. These are marked with a `TODO` comment in `index.html`.
+- **Programme descriptions are trimmed, not verbatim.** The lines under Nido,
+  Casa, Action, and Hilltop come from the school's own division summaries on the
+  About Us page, shortened to fit the cards. Worth a read-through by the school.
 - **Card links point at the live site.** The six cards under "We help children
   become more:" link to absolute URLs on lighthousemontessoriacademy.com, the
   same subject pages the original cards link to. When this replaces the real
