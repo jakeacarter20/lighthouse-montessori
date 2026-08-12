@@ -138,9 +138,32 @@
         return;
       }
 
-      // Remove this branch once the form posts somewhere real.
+      // No server behind this page, so the enquiry is handed to the visitor's
+      // own mail app with everything already filled in. It works anywhere, with
+      // no account to set up. If the form is later pointed at Formspree or a
+      // similar handler, delete this whole branch and let it post normally.
       e.preventDefault();
+
+      var value = function (id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+
+      var lines = [
+        'Name: ' + value('f-name'),
+        'Email: ' + value('f-email'),
+        'Phone: ' + (value('f-phone') || 'not given'),
+        'Program of interest: ' + (value('f-program') || 'no preference yet'),
+        '',
+        value('f-message')
+      ];
+
+      var href = 'mailto:Hello@LighthouseMontessoriAcademy.com'
+        + '?subject=' + encodeURIComponent('Enquiry from ' + value('f-name'))
+        + '&body=' + encodeURIComponent(lines.join('\n'));
+
       if (done) done.hidden = false;
+      window.location.href = href;
     });
   }
 

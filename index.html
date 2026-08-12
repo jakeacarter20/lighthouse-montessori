@@ -30,7 +30,7 @@
 <!-- The ?v= number busts the browser cache. GitHub Pages serves assets with
      cache-control: max-age=600, so without it a visitor who has already loaded
      the site keeps their old stylesheet. Bump the number on every CSS change. -->
-<link rel="stylesheet" href="css/style.css?v=11">
+<link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
 
@@ -73,6 +73,25 @@
         <a class="btn btn-ghost" href="#contact">Contact us</a>
       </div>
     </div>
+  </section>
+
+  <!-- ============ HOW SCHOOL WORKS ============ -->
+  <!-- Sits directly under the hero on purpose. The split between in person and
+       hybrid is the single fact most likely to decide whether a family is a
+       fit, and it was previously buried in the programme card body text.
+       Wording is the school's own, from the About Us page. -->
+  <section class="section attend" aria-labelledby="attend-h">
+    <h2 class="sr-only" id="attend-h">How school works</h2>
+    <ul class="attend-list">
+      <li class="reveal">
+        <span class="attend-age">Ages 0 to 5</span>
+        <p>Attend <strong>in person</strong> at our Montessori House of the Children in Provo.</p>
+      </li>
+      <li class="reveal">
+        <span class="attend-age">Ages 6 to 18</span>
+        <p>Participate <strong>online</strong>, plus <strong>once a week in person</strong> in apprenticeship settings around the community.</p>
+      </li>
+    </ul>
   </section>
 
   <!-- ============ PROGRAMS ============ -->
@@ -246,6 +265,32 @@
     </div>
   </section>
 
+  <!-- ============ PRACTICAL ============ -->
+  <!-- The three questions a family actually shops on: what happens next, what
+       it costs, who teaches my child. All three summarise the school's own
+       pages and link out to them. Rules rather than cards, so this does not
+       become a third boxed grid on the page. -->
+  <section class="section practical">
+    <div class="section-head">
+      <h2>Thinking about joining us?</h2>
+    </div>
+
+    <ul class="prac-list">
+      <li class="reveal">
+        <h3><a href="https://www.lighthousemontessoriacademy.com/new-page-240cd73bb">Admissions</a></h3>
+        <p>Five steps: enquiry, a school visit, application, placement review, then enrolment. Families are invited to visit, observe the environment, and meet school leadership.</p>
+      </li>
+      <li class="reveal">
+        <h3><a href="https://www.lighthousemontessoriacademy.com/tuition">Tuition</a></h3>
+        <p>Monthly tuition set by your child's age on September 1. Lighthouse is a licensed childcare program, and qualifying families may be eligible for assistance through Utah Workforce Services.</p>
+      </li>
+      <li class="reveal">
+        <h3><a href="https://www.lighthousemontessoriacademy.com/portfolio">Our guides</a></h3>
+        <p>We call our teachers guides, because they are more than teachers. Montessori-trained, with backgrounds from special education and language immersion to classical literature and storytelling.</p>
+      </li>
+    </ul>
+  </section>
+
   <!-- ============ CONTACT ============ -->
   <section class="section section-tint" id="contact">
    <div class="section-inner">
@@ -275,10 +320,12 @@
         </dl>
       </div>
 
-      <!-- Static markup only. There is no backend wired up: on submit the form
-           validates in the browser and shows the success panel. To make it live,
+      <!-- No backend. On submit the form validates, then hands the enquiry to
+           the visitor's own mail app with every field already filled in, which
+           needs no account and no server. To move to a real endpoint later,
            point action= at Formspree / Netlify Forms / your own handler and
-           delete the preventDefault() branch in js/main.js. -->
+           delete the mailto branch at the end of the submit handler in
+           js/main.js. -->
       <form class="form reveal" id="enquiry" novalidate>
         <div class="field">
           <label for="f-name">Your name</label>
@@ -318,8 +365,10 @@
         <button class="btn btn-primary btn-block" type="submit" id="submit-btn">Send enquiry</button>
 
         <p class="form-done" id="form-done" hidden role="status">
-          Thank you. Your enquiry has not been sent yet because this form is not
-          connected to a mail service. Please call or email us in the meantime.
+          Your email app should have opened with this enquiry ready to send. If
+          nothing happened, email us at
+          <a href="mailto:Hello@LighthouseMontessoriAcademy.com">Hello@LighthouseMontessoriAcademy.com</a>
+          or call <a href="tel:+13852375437">(385) 237-5437</a>.
         </p>
       </form>
 
@@ -364,6 +413,6 @@
   <p class="foot-legal">&copy; <span id="year">2026</span> Lighthouse Montessori Academy.</p>
 </footer>
 
-<script src="js/main.js?v=2"></script>
+<script src="js/main.js?v=3"></script>
 </body>
 </html>

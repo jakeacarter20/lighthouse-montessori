@@ -417,6 +417,86 @@ ul { margin: 0; padding: 0; list-style: none; }
    makes the emphasis read at this size instead of muddying into the body grey. */
 .oc-body p strong { color: var(--ink); font-weight: 600; }
 
+/* ---------- how school works: fact strip under the hero ----------
+   Deliberately small and quiet. It carries a decisive fact, so it needs to be
+   read early, but it must not compete with the hero above it. */
+.attend { padding-top: 0; padding-bottom: clamp(1rem, 3vw, 2rem); }
+.attend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+@media (min-width: 760px) {
+  .attend-list { grid-template-columns: 1fr 1fr; }
+}
+.attend-list li { border-top: 2px solid var(--gold); padding-top: 1rem; }
+.attend-age {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+}
+.attend-list p {
+  margin-top: .4rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 44ch;
+}
+.attend-list strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- practical: admissions, tuition, guides ----------
+   Rules instead of boxes. The page already has two card grids and a third
+   would flatten the whole composition into one texture. */
+.prac-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+}
+@media (min-width: 860px) {
+  .prac-list { grid-template-columns: repeat(3, 1fr); }
+}
+.prac-list li {
+  position: relative;
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+  transition: border-color .3s var(--ease);
+}
+.prac-list li:hover { border-top-color: var(--red-deep); }
+.prac-list h3 { font-size: 1.25rem; }
+.prac-list h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Whole block clickable, one tab stop, one link text. */
+.prac-list h3 a::after { content: ""; position: absolute; inset: 0; }
+.prac-list h3 a::before {
+  content: "";
+  float: right;
+  width: .7em; height: .7em;
+  margin-top: .35em;
+  border-right: 2px solid var(--red-deep);
+  border-top: 2px solid var(--red-deep);
+  transform: rotate(45deg);
+  transition: transform .3s var(--ease);
+}
+.prac-list li:hover h3 a::before { transform: rotate(45deg) translate(3px, -3px); }
+.prac-list li:has(a:focus-visible) { outline: 3px solid var(--red-deep); outline-offset: 6px; }
+.prac-list h3 a:focus-visible { outline: none; }
+.prac-list p {
+  margin-top: .6rem;
+  color: var(--ink-2);
+  font-size: .9688rem;
+  line-height: 1.6;
+}
+@media (prefers-reduced-motion: reduce) {
+  .prac-list li, .prac-list h3 a::before { transition: none; }
+  .prac-list li:hover h3 a::before { transform: rotate(45deg); }
+}
+
 /* ---------- about: running copy with a pulled quote ----------
    The right column carries a real pullquote rather than a spare paragraph, so
    this reads as a composition and not as a heading with filler beside it. */
@@ -484,6 +564,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   .contact { grid-template-columns: 1fr 1fr; align-items: start; }
 }
 .contact-intro > p { margin-top: 1rem; color: var(--ink-2); max-width: 40ch; }
+
+/* Grid items refuse to shrink below their min-content width by default, and the
+   email address is one unbreakable 37-character word. On a narrow phone that
+   pushed the whole column past the viewport and gave the page a sideways
+   scroll. Let the address wrap and let the track shrink. */
+.contact > * { min-width: 0; }
+.contact-details dd a { overflow-wrap: anywhere; }
 
 .contact-details { margin: clamp(2rem, 4vw, 3rem) 0 0; display: grid; gap: 1.5rem; }
 .contact-details dt {
