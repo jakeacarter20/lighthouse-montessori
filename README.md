@@ -54,10 +54,10 @@ download the woff2 files into `/fonts`, replace the `<link>` in the head with
   Casa, Action, and Hilltop are drafted from the school's stated language plan
   (Spanish ages 0 to 6, English ages 7 to 18). The current homepage carries no
   per-programme copy. These are marked with a `TODO` comment in `index.html`.
-- **Subject area links point at the live site.** The six cards under "Authentic
-  Montessori subject areas" link to absolute URLs on
-  lighthousemontessoriacademy.com. When this replaces the real homepage, change
-  them to relative paths so they stay inside the site.
+- **Card links point at the live site.** The six cards under "We help children
+  become more:" link to absolute URLs on lighthousemontessoriacademy.com, the
+  same subject pages the original cards link to. When this replaces the real
+  homepage, change them to relative paths so they stay inside the site.
 - **Update the social card host.** `og:url` and `og:image` in the head are
   absolute URLs on the GitHub Pages domain, because social platforms will not
   resolve a relative path. Point them at the real domain when this moves.

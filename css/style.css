@@ -351,7 +351,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .outcomes { grid-template-columns: repeat(12, 1fr); }
   .oc      { grid-column: span 3; }
   .oc-wide { grid-column: span 6; }
-  /* wide cell opens row one and closes row two, so the grid has rhythm */
+  /* One wide cell leads each row. Cards 1 and 4 carry the longest copy, so the
+     extra width is where the text actually needs it. */
   .oc-wide { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
   .oc-wide figure { height: 100%; }
   .oc-wide img { height: 100%; aspect-ratio: auto; }
@@ -404,6 +405,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: .9688rem;
   line-height: 1.55;
 }
+/* The school bolds key words in this copy. Darkening as well as weighting them
+   makes the emphasis read at this size instead of muddying into the body grey. */
+.oc-body p strong { color: var(--ink); font-weight: 600; }
 
 /* ---------- statement: one colour block, used once ---------- */
 .statement {
